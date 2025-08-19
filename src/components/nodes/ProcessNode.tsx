@@ -24,7 +24,12 @@ function ProcessNode({ data, selected }: NodeProps) {
       <Handle
         type='target'
         position={Position.Top}
-        className='w-3 h-3 !bg-blue-400 !border-2 !border-white'
+        className='w-4 h-4 !bg-blue-500 !border-3 !border-white !shadow-lg'
+        style={{
+          background: '#3b82f6',
+          border: '3px solid white',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+        }}
       />
 
       <div className='flex flex-col items-center'>
@@ -39,7 +44,12 @@ function ProcessNode({ data, selected }: NodeProps) {
       <Handle
         type='source'
         position={Position.Bottom}
-        className='w-3 h-3 !bg-blue-400 !border-2 !border-white'
+        className='w-4 h-4 !bg-blue-500 !border-3 !border-white !shadow-lg'
+        style={{
+          background: '#3b82f6',
+          border: '3px solid white',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+        }}
       />
     </div>
   );

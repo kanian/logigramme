@@ -29,7 +29,12 @@ function DecisionNode({ data, selected }: NodeProps) {
       <Handle
         type='target'
         position={Position.Top}
-        className='w-3 h-3 !bg-yellow-400 !border-2 !border-white'
+        className='w-4 h-4 !border-3 !border-white !shadow-lg'
+        style={{
+          background: nodeData.color || '#92400e',
+          border: '3px solid white',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+        }}
       />
 
       <div className='flex items-center justify-center h-full'>
@@ -45,13 +50,23 @@ function DecisionNode({ data, selected }: NodeProps) {
         type='source'
         position={Position.Right}
         id='yes'
-        className='w-3 h-3 !bg-green-400 !border-2 !border-white'
+        className='w-4 h-4 !border-3 !border-white !shadow-lg'
+        style={{
+          background: nodeData.color || '#92400e',
+          border: '3px solid white',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+        }}
       />
       <Handle
         type='source'
         position={Position.Left}
         id='no'
-        className='w-3 h-3 !bg-red-400 !border-2 !border-white'
+        className='w-4 h-4 !border-3 !border-white !shadow-lg'
+        style={{
+          background: nodeData.color || '#92400e',
+          border: '3px solid white',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+        }}
       />
     </div>
   );
