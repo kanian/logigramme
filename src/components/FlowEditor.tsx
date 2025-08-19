@@ -75,19 +75,15 @@ const FlowEditor: React.FC = () => {
   );
 
   const onNodeDoubleClick = useCallback(
-    (_event: React.MouseEvent, node: any) => {
-      const newLabel = prompt('Enter new label:', node.data.label);
-      if (newLabel !== null) {
-        setNodes((nds: any) =>
-          nds.map((n: any) =>
-            n.id === node.id
-              ? { ...n, data: { ...n.data, label: newLabel } }
-              : n
-          )
-        );
-      }
+    (event: React.MouseEvent, node: any) => {
+      setEditDialog({
+        isOpen: true,
+        nodeId: node.id,
+        currentLabel: node.data.label,
+        position: { x: event.clientX, y: event.clientY },
+      });
     },
-    [setNodes]
+    []
   );
 
   // Handle double-click on the canvas to show context menu
