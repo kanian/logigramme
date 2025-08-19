@@ -1,0 +1,430 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --radius-md: calc(var(--radius) - 2px);
+
+  --radius-lg: var(--radius);
+
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+
+  --color-input: var(--input);
+
+  --color-ring: var(--ring);
+
+  --color-highlight: var(--highlight);
+
+  --color-primary-hover: var(--primary-hover);
+
+  --color-secondary-hover: var(--secondary-hover);
+
+  --color-orange-soft: var(--orange-soft);
+
+  --color-orange-muted: var(--orange-muted);
+
+  --color-chart-1: var(--chart-1);
+
+  --color-chart-2: var(--chart-2);
+
+  --color-chart-3: var(--chart-3);
+
+  --color-chart-4: var(--chart-4);
+
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom warm shadows */
+  --shadow-warm: var(--shadow-warm);
+  --shadow-warm-lg: var(--shadow-warm-lg);
+
+  /* Custom background images */
+  --background-image-gradient-warm: var(--gradient-warm);
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Giant Goldfish Warm Color Palette - Softened Light Mode */
+  --background: hsl(38 40% 96%);
+
+  --foreground: hsl(24 20% 20%);
+
+  --card: hsl(38 40% 95%);
+
+  --card-foreground: hsl(24 20% 20%);
+
+  --popover: hsl(38 40% 95%);
+
+  --popover-foreground: hsl(24 20% 20%);
+
+  --primary: hsl(36 100% 50%);
+
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(40 100% 70%);
+
+  --secondary-foreground: hsl(30 40% 20%);
+
+  --muted: hsl(38 30% 93%);
+
+  --muted-foreground: hsl(24 15% 40%);
+
+  --accent: hsl(330 50% 60%);
+
+  --accent-foreground: hsl(0 0% 100%);
+
+  --destructive: hsl(0 100% 70%);
+
+  --border: hsl(38 30% 85%);
+
+  --input: hsl(38 35% 90%);
+
+  --ring: hsl(36 100% 50%);
+
+  /* Additional warm theme variables */
+  --highlight: hsl(40 100% 85%);
+
+  /* Orange-based hover colors */
+  --primary-hover: hsl(36 100% 45%);
+  --secondary-hover: hsl(40 100% 65%);
+  --orange-soft: hsl(38 100% 92%);
+  --orange-muted: hsl(38 60% 88%);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    hsl(36 100% 50%) 0%,
+    hsl(40 100% 70%) 50%,
+    hsl(38 80% 60%) 100%
+  );
+
+  --shadow-warm: 0 4px 8px hsl(36 100% 25% / 0.15),
+    0 1px 2px hsl(36 100% 15% / 0.1);
+
+  --shadow-warm-lg: 0 8px 16px hsl(36 100% 25% / 0.2),
+    0 2px 4px hsl(36 100% 15% / 0.15);
+
+  --chart-1: hsl(36 100% 50%);
+
+  --chart-2: hsl(40 100% 70%);
+
+  --chart-3: hsl(330 50% 60%);
+
+  --chart-4: hsl(0 100% 70%);
+
+  --chart-5: hsl(0 0% 60%);
+
+  --sidebar: hsl(38 40% 95%);
+
+  --sidebar-foreground: hsl(24 20% 20%);
+
+  --sidebar-primary: hsl(36 100% 50%);
+
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+
+  --sidebar-accent: hsl(40 100% 70%);
+
+  --sidebar-accent-foreground: hsl(30 40% 20%);
+
+  --sidebar-border: hsl(38 30% 85%);
+
+  --sidebar-ring: hsl(36 100% 50%);
+}
+
+.dark {
+  /* Dark mode with warm undertones */
+  --background: hsl(30 20% 8%);
+
+  --foreground: hsl(0 0% 98%);
+
+  --card: hsl(30 25% 12%);
+
+  --card-foreground: hsl(0 0% 98%);
+
+  --popover: hsl(30 25% 12%);
+
+  --popover-foreground: hsl(0 0% 98%);
+
+  --primary: hsl(36 100% 60%);
+
+  --primary-foreground: hsl(30 20% 8%);
+
+  --secondary: hsl(30 20% 18%);
+
+  --secondary-foreground: hsl(0 0% 95%);
+
+  --muted: hsl(30 20% 18%);
+
+  --muted-foreground: hsl(0 0% 85%);
+
+  --accent: hsl(330 60% 65%);
+
+  --accent-foreground: hsl(30 20% 8%);
+
+  --destructive: hsl(0 80% 65%);
+
+  --border: hsl(30 30% 25%);
+
+  --input: hsl(30 25% 20%);
+
+  --ring: hsl(36 100% 60%);
+
+  /* Dark mode warm theme variables */
+  --highlight: hsl(40 80% 25%);
+
+  /* Orange-based hover colors for dark mode */
+  --primary-hover: hsl(36 100% 65%);
+  --secondary-hover: hsl(40 80% 70%);
+  --orange-soft: hsl(38 40% 15%);
+  --orange-muted: hsl(38 30% 22%);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    hsl(36 100% 60%) 0%,
+    hsl(40 90% 65%) 50%,
+    hsl(38 70% 65%) 100%
+  );
+
+  --shadow-warm: 0 4px 8px hsl(30 50% 5% / 0.25),
+    0 1px 2px hsl(30 50% 3% / 0.15);
+
+  --shadow-warm-lg: 0 8px 16px hsl(30 50% 5% / 0.3),
+    0 2px 4px hsl(30 50% 3% / 0.2);
+
+  --chart-1: hsl(36 100% 60%);
+
+  --chart-2: hsl(40 90% 65%);
+
+  --chart-3: hsl(330 60% 65%);
+
+  --chart-4: hsl(0 80% 65%);
+
+  --chart-5: hsl(0 0% 65%);
+
+  --sidebar: hsl(30 25% 12%);
+
+  --sidebar-foreground: hsl(0 0% 98%);
+
+  --sidebar-primary: hsl(36 100% 60%);
+
+  --sidebar-primary-foreground: hsl(30 20% 8%);
+
+  --sidebar-accent: hsl(30 20% 18%);
+
+  --sidebar-accent-foreground: hsl(0 0% 95%);
+
+  --sidebar-border: hsl(30 30% 25%);
+
+  --sidebar-ring: hsl(36 100% 60%);
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
+  }
+  html,
+  body {
+    background-color: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Ensure dark mode text is white */
+  .dark {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark * {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark .text-foreground,
+  .dark [class*='text-foreground'] {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark .text-card-foreground,
+  .dark [class*='text-card-foreground'] {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark .text-muted-foreground,
+  .dark [class*='text-muted-foreground'] {
+    color: hsl(0 0% 85%) !important;
+  }
+
+  /* Additional dark mode text overrides */
+  html.dark,
+  html.dark body,
+  .dark,
+  .dark * {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark p,
+  .dark span,
+  .dark div,
+  .dark label {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark a {
+    color: hsl(36 100% 60%) !important;
+  }
+
+  .dark a:hover {
+    color: hsl(36 100% 70%) !important;
+  }
+
+  /* Override any remaining gray text classes in dark mode */
+  .dark .text-gray-900,
+  .dark .text-gray-800,
+  .dark .text-gray-700,
+  .dark .text-gray-600,
+  .dark .text-gray-500 {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark .text-gray-400,
+  .dark .text-gray-300 {
+    color: hsl(0 0% 85%) !important;
+  }
+
+  /* Ensure buttons have proper text contrast */
+  .dark button {
+    color: hsl(0 0% 98%) !important;
+  }
+
+  .dark .bg-primary {
+    color: hsl(30 20% 8%) !important;
+  }
+}
+
+/* Custom styles for React Flow Flowchart App */
+.react-flow__node-textNode,
+.react-flow__node-processNode,
+.react-flow__node-decisionNode {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.react-flow__handle {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.react-flow__node:hover .react-flow__handle {
+  opacity: 1;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2px;
+  transition: stroke-width 0.2s ease;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 3px;
+}
+
+.react-flow__controls {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__controls-button {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.react-flow__controls-button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.react-flow__minimap {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+/* Custom animations */
+@keyframes pulse-border {
+  0%,
+  100% {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  }
+}
+
+.node-selected {
+  animation: pulse-border 2s ease-in-out infinite;
+}
