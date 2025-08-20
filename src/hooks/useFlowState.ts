@@ -21,14 +21,7 @@ interface FlowStore {
   resetFlow: () => void;
 }
 
-const initialNodes: FlowNode[] = [
-  {
-    id: '1',
-    type: 'input',
-    position: { x: 300, y: 50 },
-    data: { label: 'Start', color: '#10b981' },
-  },
-];
+const initialNodes: FlowNode[] = [];
 
 const initialEdges: FlowEdge[] = [];
 
