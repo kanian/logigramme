@@ -13,6 +13,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
-    allowedHosts: ['localhost', '0.0.0.0'], // Use the variable here
+    allowedHosts: ['localhost', '0.0.0.0', '.riker.replit.dev'], // Use the variable here
   },
 });
